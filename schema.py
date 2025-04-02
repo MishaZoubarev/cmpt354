@@ -92,4 +92,4 @@ CREATE TABLE IF NOT EXISTS FutureItem (
 conn.commit()
 conn.close()
 
-print("Database schema created successfully!")
+print("Database schema created!")
