@@ -72,7 +72,7 @@ events = [
 # Populate User table
 namesStartingIndex = random.randrange(-1,len(names)-10);
 for i in range(1,11) :
-    user = (i, f"{names[namesStartingIndex + i]}", f"{random.randrange(100,1000):03}-{random.randrange(100,1000):03}-{random.randrange(1000,10000):04}", f"{random.randrange(1000,3000)} {random.choice(directions)} {random.randrange(1,10)} Ave", "Active" if i % 2 == 0 else "Inactive", round(i * 1.25 % 7, 2))
+    user = (i, f"{names[namesStartingIndex + i]}", f"{random.randrange(100,1000):03}-{random.randrange(100,1000):03}-{random.randrange(1000,10000):04}", f"{random.randrange(1000,3000)} {random.choice(directions)} {random.randrange(1,50)} Ave", "Active" if i % 2 == 0 else "Inactive", round(i * 1.25 % 7, 2))
     cursor.execute("INSERT INTO User VALUES (?, ?, ?, ?, ?, ?)", user)
 
 # Populate LibraryItem table
