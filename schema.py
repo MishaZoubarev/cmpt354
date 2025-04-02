@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS LibraryItem (
     Author TEXT,
     Type TEXT CHECK(Type IN ('Book', 'Magazine', 'Journal', 'CD', 'Record', 'Other')),
     Status TEXT CHECK(Status IN ('Available', 'Borrowed')) NOT NULL,
-    Audience TEXT,
+    Audience TEXT CHECK(Status IN ('General', 'Adults', 'Teens', 'Children')),
     DateAdded DATE
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS Event (
 CREATE TABLE IF NOT EXISTS Attends (
     UserID INTEGER,
     EventID INTEGER,
-    PRIMARY KEY (UserID, EventID),
+    PRIMARY KEY (UserID, EventID)
     FOREIGN KEY (UserID) REFERENCES User(UserID) ON DELETE CASCADE,
     FOREIGN KEY (EventID) REFERENCES Event(EventID) ON DELETE CASCADE
 );
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS FutureItem (
     Title TEXT NOT NULL,
     Type TEXT,
     ExpectedArrivalDate DATE
-);
+);                
 """)
 
 # Commit and close
