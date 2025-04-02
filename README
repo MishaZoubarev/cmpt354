@@ -1,0 +1,3 @@
+To run the program, perform the following steps :
+    1. Run setup.py
+    2. Run EITHER library_app.py (terminal application) OR library_gui.py (gui application)
