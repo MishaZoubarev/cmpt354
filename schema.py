@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS LibraryItem (
     Author TEXT,
     Type TEXT CHECK(Type IN ('Book', 'Magazine', 'Journal', 'CD', 'Record', 'Other')),
     Status TEXT CHECK(Status IN ('Available', 'Borrowed')) NOT NULL,
-    Audience TEXT CHECK(Status IN ('General', 'Adults', 'Teens', 'Children')),
+    Audience TEXT CHECK(Audience IN ('General', 'Adults', 'Teens', 'Children')),
     DateAdded DATE
 );
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS Event (
     EventID INTEGER PRIMARY KEY,
     Name TEXT NOT NULL,
     Description TEXT,
-    RecommendedAudience TEXT CHECK(Status IN ('General', 'Adults', 'Teens', 'Children')),
+    RecommendedAudience TEXT CHECK(RecommendedAudience IN ('General', 'Adults', 'Teens', 'Children')),
     Location TEXT,
     DateTime DATETIME NOT NULL
 );
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS FutureItem (
     Title TEXT NOT NULL,
     Type TEXT,
     ExpectedArrivalDate DATE
-);                
+);        
 """)
 
 # Commit and close
