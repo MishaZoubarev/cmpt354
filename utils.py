@@ -73,9 +73,8 @@ def addItem(title, author, type, audience) :
     conn.commit()
 
 
+# ALL code below is for TESTING
 def main() : 
     addItem("new book", "Paul", "Book", "Teens")
     conn.close()
-
-
 main()
