@@ -122,16 +122,11 @@ my_set = set()
 for i in range(1, 11) :
     # have a random user borrow a random book
     randUserID = random.randrange(1,11)
-    randItemID = random.randrange(1,11)
-    
-    while (randUserID, randEventID) in my_set :
-        randUserID = random.randrange(1,11)
-        randItemID = random.randrange(1,11)
 
     timeNow = datetime.today().strftime('%Y-%m-%d')
     timeIn2Weeks = (datetime.today() + timedelta(weeks=2)).strftime('%Y-%m-%d')
 
-    borrows = (i, timeNow, timeIn2Weeks, None, randUserID, randItemID)
+    borrows = (i, timeNow, timeIn2Weeks, None, randUserID, i)
     cursor.execute("INSERT INTO Borrows VALUES (?, ?, ?, ?, ?, ?)", borrows)
 
 # Populate Fine table

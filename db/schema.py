@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to (or create) the database file
-conn = sqlite3.connect("../library.db")
+conn = sqlite3.connect("library.db")
 cursor = conn.cursor()
 
 # Enable foreign key constraints
