@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS Event (
     EventID INTEGER PRIMARY KEY,
     Name TEXT NOT NULL,
     Description TEXT,
-    RecommendedAudience TEXT,
+    RecommendedAudience TEXT CHECK(Status IN ('General', 'Adults', 'Teens', 'Children')),
     Location TEXT,
     DateTime DATETIME NOT NULL
 );
